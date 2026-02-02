@@ -23,15 +23,16 @@ async def chat_endpoint(request: ChatRequest):
     try:
 
         chat_history.append({"role" : "user", "content" : request.message})
-        chat_completion = await asyncio.to.thread ( 
+        chat_completion = await asyncio.to_thread ( 
             
             client.chat.completions.create,
             messages = chat_history,
-            model="llama-3.3-70b-versatile", # High-performance model
+            model="llama-3.3-70b-versatile", # Groq's High-performance model
         )
         
         ai_rep = chat_completion.choices[0].message.content
         chat_history.append({"role" : "assistant", "content" : ai_rep})
+        
         return {"response": ai_rep}
         
     except Exception as e:
