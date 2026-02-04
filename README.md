@@ -44,3 +44,4 @@ uvicorn main:app --reload
 
 cd frontend
 streamlit run app.py
+#streamlit automatically opens in your default browser
