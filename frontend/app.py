@@ -4,7 +4,7 @@ import requests
 st.title("AI Chatbot")
 st.set_page_config(layout="wide")
 
-if "chats" not in st.session_state: st.session_state.chats = {"New Chat": [{"role": "system", "content": "you are a funny assistant, incorporate humor into your responses."}]}
+if "chats" not in st.session_state: st.session_state.chats = {"New Chat": []}
 if "current_chat_id" not in st.session_state: st.session_state.current_chat_id = "New Chat"
 
 with st.sidebar : 
